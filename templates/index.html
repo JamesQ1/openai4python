@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<head>
+  <title>OpenAI Quickstart</title>
+  <link
+    rel="shortcut icon"
+    href="{{ url_for('static', filename='dog.png') }}"
+  />
+  <link rel="stylesheet" href="{{ url_for('static', filename='main.css') }}" />
+</head>
+
+<body>
+  <img src="{{ url_for('static', filename='robot.png') }}" class="icon" />
+  <h3>Free chartGpt</h3>
+  <h5>免费版暂支持每分钟3次调用</h5>
+  <form action="/" method="post">
+    <input type="text" name="animal" placeholder="Enter your question" required />
+    <input type="submit" value="Generate answers from chartGpt" />
+  </form>
+  {% if result %}
+  <div class="result">{{ result }}</div>
+  {% endif %}
+</body>
